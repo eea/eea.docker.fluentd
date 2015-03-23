@@ -2,9 +2,8 @@ FROM kiyoto/fluentd:0.10.56-2.1.1
 
 MAINTAINER Mihai Bivol <mihai.bivol@eaudeweb.ro>
 
-RUN mkdir /etc/fluent/
-VOLUME ['/etc/fluent/fluent.conf']
-VOLUME ['/log']
+RUN mkdir -p /etc/fluent/
+RUN mkdir -p /log
 
 RUN /usr/local/bin/gem install fluent-plugin-record-reformer --no-rdoc --no-ri
 RUN /usr/local/bin/gem install fluent-plugin-elasticsearch --no-rdoc --no-ri
