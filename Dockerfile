@@ -2,6 +2,8 @@ FROM kiyoto/fluentd:0.10.56-2.1.1
 
 MAINTAINER Mihai Bivol <mihai.bivol@eaudeweb.ro>
 
+RUN apt-get update -q && apt-get install -y supervisor
+
 RUN mkdir -p /etc/fluent/
 RUN mkdir -p /log
 
@@ -14,4 +16,5 @@ ADD out_gelf.rb /etc/fluent/plugin/
 EXPOSE 5140
 EXPOSE 5140/udp
 
-ENTRYPOINT /usr/local/bin/fluentd -c /etc/fluent/fluent.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+CMD ["/usr/bin/supervisord"]
