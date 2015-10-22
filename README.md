@@ -3,6 +3,12 @@
 Use this image if you want to make fluentd store logs in elasticsearch or
 graylog2
 
+
+## Versions:
+* latest: fluentd with chaperone
+* 1.0.1: fluentd with chaperone
+* 1.0: fluentd
+
 ## How to run
 ```docker run -v /path/to/your/fluent.conf:/etc/fluent/fluent.conf eeacms/fluentd```
 
