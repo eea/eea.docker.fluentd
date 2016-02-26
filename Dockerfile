@@ -1,4 +1,4 @@
-FROM fluent/fluentd:0.12.19
+FROM fluent/fluentd:v0.12.19
 MAINTAINER Eduard Zaharia <eduard.zaharia@eaudeweb.ro>
 
 USER root
